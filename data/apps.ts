@@ -77,6 +77,7 @@ export const apps: App[] = [
     tags: ['マッチング', 'AI', 'セキュリティ', '画像判定', '安全'],
     appStoreUrl: 'https://apps.apple.com/jp/app/%E3%83%97%E3%83%AD%E3%83%95%E3%82%A3%E3%83%BC%E3%83%AB%E6%8B%BE%E3%81%84%E7%94%BB%E3%83%81%E3%82%A7%E3%83%83%E3%82%AB%E3%83%BC-%E3%83%9E%E3%83%83%E3%83%81%E3%83%B3%E3%82%B0%E3%82%A2%E3%83%97%E3%83%AA/id6477735162',
     googlePlayUrl: 'https://play.google.com/store/apps/details?id=com.tatsukikane.profilehiroigachecker&pcampaignid=web_share',
+    websiteUrl: 'https://note.com/tatsukikane/n/n1ac336fae6c5',
   },
   {
     id: 'jiomemo',
@@ -101,6 +102,7 @@ export const apps: App[] = [
     tags: ['メモ', '地図', 'アイデア', '記録'],
     appStoreUrl: 'https://apps.apple.com/jp/app/%E3%81%98%E3%81%8A%E3%82%81%E3%82%82-%E3%81%B2%E3%82%89%E3%82%81%E3%81%8D%E3%82%92%E5%9C%B0%E5%9B%B3%E3%81%AB%E5%88%BB%E3%82%80/id6752025007',
     googlePlayUrl: 'https://play.google.com/store/apps/details?id=com.tatsukikane.geomemo&pcampaignid=web_share',
+    websiteUrl: 'https://note.com/tatsukikane/n/nd17791c91a3e',
   },
   {
     id: 'baelab',
