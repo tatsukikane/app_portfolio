@@ -96,6 +96,22 @@ export default function TableOfContents({ apps }: TableOfContentsProps) {
                     </div>
                   </Link>
                 ))}
+                <Link
+                  href="#contact"
+                  onClick={handleLinkClick}
+                  className="group flex items-center gap-4 rounded-xl p-4 transition-all duration-200 hover:bg-gray-50 active:bg-gray-100"
+                  style={{
+                    borderLeft: '4px solid #7c3aed',
+                  }}
+                >
+                  <span className="text-3xl">📧</span>
+                  <div className="flex-1">
+                    <div className="text-sm font-semibold text-gray-900">
+                      お問い合わせ
+                    </div>
+                    <div className="text-xs text-gray-500">Contact</div>
+                  </div>
+                </Link>
               </nav>
             </div>
           </div>
@@ -121,6 +137,17 @@ export default function TableOfContents({ apps }: TableOfContentsProps) {
                 <span>{app.name}</span>
               </Link>
             ))}
+            <Link
+              href="#contact"
+              className="group flex items-center gap-2 rounded-full px-4 py-2 text-sm font-medium transition-all duration-300 hover:scale-105"
+              style={{
+                backgroundColor: '#7c3aed15',
+                color: '#7c3aed',
+              }}
+            >
+              <span className="text-lg">📧</span>
+              <span>お問い合わせ</span>
+            </Link>
           </div>
         </div>
       </nav>

@@ -1,6 +1,7 @@
 import { apps } from '@/data/apps';
 import AppHero from '@/components/AppHero';
 import TableOfContents from '@/components/TableOfContents';
+import ContactForm from '@/components/ContactForm';
 
 export default function Home() {
   return (
@@ -30,6 +31,9 @@ export default function Home() {
           </div>
         ))}
       </div>
+
+      {/* 問い合わせフォーム */}
+      <ContactForm />
 
       {/* フッター */}
       <footer className="border-t border-purple-200 bg-white/90 py-6 backdrop-blur-sm lg:py-8">
