@@ -1,65 +1,42 @@
-import Image from "next/image";
+import { apps } from '@/data/apps';
+import AppHero from '@/components/AppHero';
+import TableOfContents from '@/components/TableOfContents';
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
+    <div className="min-h-screen bg-gradient-to-br from-purple-50 via-pink-50 via-orange-50 to-cyan-50">
+      {/* メインヒーローセクション */}
+      <div className="relative overflow-hidden bg-gradient-to-br from-purple-100 via-pink-100 via-orange-100 to-cyan-100">
+        <div className="absolute inset-0 bg-gradient-to-r from-purple-200/50 via-pink-200/50 via-orange-200/50 to-cyan-200/50" />
+        <div className="relative mx-auto max-w-7xl px-6 py-20 text-center sm:px-8 lg:py-32">
+          <h1 className="mb-6 text-5xl font-bold tracking-tight text-gray-900 sm:text-6xl lg:text-7xl">
+            <span className="bg-gradient-to-r from-pink-500 via-purple-500 to-cyan-500 bg-clip-text text-transparent">
+              毎日をアップデートする
+            </span>
+            <br />
+            <span className="text-gray-800">小さな魔法たち🪄</span>
           </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+      </div>
+
+      {/* 目次 */}
+      <TableOfContents apps={apps} />
+
+      {/* 各アプリの詳細セクション */}
+      <div className="mx-auto max-w-7xl px-6 pb-20 sm:px-8">
+        {apps.map((app, index) => (
+          <div key={app.id} id={app.id} className="mb-8 scroll-mt-44 sm:scroll-mt-32 md:scroll-mt-28 lg:scroll-mt-24">
+            <AppHero app={app} reverse={index % 2 === 1} />
+          </div>
+        ))}
+      </div>
+
+      {/* フッター */}
+      <footer className="border-t border-purple-200 bg-white/90 py-8 backdrop-blur-sm">
+        <div className="mx-auto max-w-7xl px-6 text-center text-gray-600 sm:px-8">
+          <p>© 2024 All rights reserved.</p>
         </div>
-      </main>
+      </footer>
     </div>
   );
 }

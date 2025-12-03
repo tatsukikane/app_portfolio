@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #fefefe;
+  --foreground: #1a1a1a;
 }
 
 @theme inline {
@@ -12,15 +12,38 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* ダークモードを無効化して常に明るいデザインに */
+* {
+  box-sizing: border-box;
 }
 
 body {
-  background: var(--background);
+  background: #fefefe !important;
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-geist-sans), system-ui, -apple-system, sans-serif;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+/* スムーズなスクロール */
+html {
+  scroll-behavior: smooth;
+  background: linear-gradient(135deg, #fef3ff 0%, #fff3f5 25%, #fff8e1 50%, #e0f7fa 75%, #f3e5f5 100%);
+  background-attachment: fixed;
+  min-height: 100vh;
+}
+
+/* カスタムアニメーション */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
 }
