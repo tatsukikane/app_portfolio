@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "iko・じおめも・BaeLab | あなたの毎日をもっと楽しく",
-  description: "行きたい場所をマップにメモする「iko」、ひらめきを地図に刻む「じおめも」、恋愛を科学する「BaeLab」。生活を豊かにする3つのアプリをダウンロード",
+  title: "毎日をアップデートする小さな魔法たち",
+  description: "行きたい場所をマップにメモする「iko」、ひらめきを地図に刻む「じおめも」、恋愛を科学する「BaeLab」など、生活を豊かにするアプリのポートフォリオ",
 };
 
 export default function RootLayout({
