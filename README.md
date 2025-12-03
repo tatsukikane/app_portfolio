@@ -1,36 +1,132 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# アプリポートフォリオ
 
-## Getting Started
+あなたの毎日をもっと楽しくする3つのアプリを紹介するポートフォリオサイトです。
 
-First, run the development server:
+## 🚀 セットアップ
+
+### 必要な環境
+
+- Node.js 18以上
+- npm / yarn / pnpm / bun
+
+### インストール
+
+```bash
+npm install
+# または
+yarn install
+# または
+pnpm install
+# または
+bun install
+```
+
+### 開発サーバーの起動
 
 ```bash
 npm run dev
-# or
+# または
 yarn dev
-# or
+# または
 pnpm dev
-# or
+# または
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+ブラウザで [http://localhost:3000](http://localhost:3000) を開いて確認できます。
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### ビルド
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+npm start
+```
 
-## Learn More
+## 📱 アプリ一覧
 
-To learn more about Next.js, take a look at the following resources:
+### 🗺️ iko
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+**行きたい場所をマップにメモするアプリ**
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+SNSやTVで見つけた「ここ行きたい！」を、地図にサクッと保存。パートナーと共有しながら、二人だけのオリジナルのマップを作り上げることができます。
 
-## Deploy on Vercel
+- **カテゴリー**: ライフスタイル
+- **App Store**: [https://apps.apple.com/jp/app/iko-%E8%A1%8C%E3%81%8D%E3%81%9F%E3%81%84%E5%A0%B4%E6%89%80%E3%82%92%E3%83%9E%E3%83%83%E3%83%97%E3%81%AB%E3%83%A1%E3%83%A2/id6475811225](https://apps.apple.com/jp/app/iko-%E8%A1%8C%E3%81%8D%E3%81%9F%E3%81%84%E5%A0%B4%E6%89%80%E3%82%92%E3%83%9E%E3%83%83%E3%83%97%E3%81%AB%E3%83%A1%E3%83%A2/id6475811225)
+- **Google Play**: [https://play.google.com/store/apps/details?id=com.tatsukikane.iko&pcampaignid=web_share](https://play.google.com/store/apps/details?id=com.tatsukikane.iko&pcampaignid=web_share)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### 🎁 DreamBox
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+**寿命カウントダウンとバケットリストで夢を叶えるアプリ**
+
+「DIE WITH ZERO」を読んで作ったアプリ。寿命カウントダウンで残りの人生を意識し、バケットリストでやりたいことを管理。夢の見える化で、確かな一歩へと導きます。
+
+- **カテゴリー**: ライフスタイル
+- **App Store**: [https://apps.apple.com/jp/app/dreambox-%E3%83%90%E3%82%B1%E3%83%83%E3%83%88%E3%83%AA%E3%82%B9%E3%83%88/id6456941403](https://apps.apple.com/jp/app/dreambox-%E3%83%90%E3%82%B1%E3%83%83%E3%83%88%E3%83%AA%E3%82%B9%E3%83%88/id6456941403)
+- **Google Play**: [https://play.google.com/store/apps/details?id=com.kt.dreamBox&pcampaignid=web_share](https://play.google.com/store/apps/details?id=com.kt.dreamBox&pcampaignid=web_share)
+
+### 🔍 プロフィール拾い画チェッカー
+
+**AIで偽プロフィール画像を見破るマッチングアプリ向けアプリ**
+
+AI技術を用いて、プロフィール画像が本人のものかどうかを判定するアプリ。類似画像検索も合わせて表示し、偽アカウントによる被害を防ぎ、安心してマッチングを楽しめます。
+
+- **カテゴリー**: エンターテインメント
+- **App Store**: [https://apps.apple.com/jp/app/%E3%83%97%E3%83%AD%E3%83%95%E3%82%A3%E3%83%BC%E3%83%AB%E6%8B%BE%E3%81%84%E7%94%BB%E3%83%81%E3%82%A7%E3%83%83%E3%82%AB%E3%83%BC-%E3%83%9E%E3%83%83%E3%83%81%E3%83%B3%E3%82%B0%E3%82%A2%E3%83%97%E3%83%AA/id6477735162](https://apps.apple.com/jp/app/%E3%83%97%E3%83%AD%E3%83%95%E3%82%A3%E3%83%BC%E3%83%AB%E6%8B%BE%E3%81%84%E7%94%BB%E3%83%81%E3%82%A7%E3%83%83%E3%82%AB%E3%83%BC-%E3%83%9E%E3%83%83%E3%83%81%E3%83%B3%E3%82%B0%E3%82%A2%E3%83%97%E3%83%AA/id6477735162)
+- **Google Play**: [https://play.google.com/store/apps/details?id=com.tatsukikane.profilehiroigachecker&pcampaignid=web_share](https://play.google.com/store/apps/details?id=com.tatsukikane.profilehiroigachecker&pcampaignid=web_share)
+
+### 📍 じおめも
+
+**ひらめきを地図に刻むメモアプリ**
+
+場所とメモを結びつける新しいメモアプリ。その場所で思いついたアイデアや、訪れた場所の思い出を地図上に記録できます。
+
+- **カテゴリー**: プロダクティビティ
+- **App Store**: [https://apps.apple.com/jp/app/%E3%81%98%E3%81%8A%E3%82%81%E3%82%82-%E3%81%B2%E3%82%89%E3%82%81%E3%81%8D%E3%82%92%E5%9C%B0%E5%9B%B3%E3%81%AB%E5%88%BB%E3%82%80/id6752025007](https://apps.apple.com/jp/app/%E3%81%98%E3%81%8A%E3%82%81%E3%82%82-%E3%81%B2%E3%82%89%E3%82%81%E3%81%8D%E3%82%92%E5%9C%B0%E5%9B%B3%E3%81%AB%E5%88%BB%E3%82%80/id6752025007)
+- **Google Play**: [https://play.google.com/store/apps/details?id=com.tatsukikane.geomemo&pcampaignid=web_share](https://play.google.com/store/apps/details?id=com.tatsukikane.geomemo&pcampaignid=web_share)
+
+### 💕 BaeLab
+
+**恋愛を科学するマッチングアプリ記録AIアプリ**
+
+マッチングアプリでの出会いを記録し、AIが分析してくれるアプリ。恋愛をデータとして記録し、より良い出会いにつなげます。
+
+- **カテゴリー**: ソーシャル
+- **App Store**: [https://apps.apple.com/jp/app/baelab-%E3%83%9E%E3%83%81%E3%82%A1%E3%83%97%E8%A8%98%E9%8C%B2-ai%E3%81%8C%E6%81%8B%E6%84%9B%E3%82%92%E3%82%B5%E3%83%9D%E3%83%BC%E3%83%88/id6754208024](https://apps.apple.com/jp/app/baelab-%E3%83%9E%E3%83%81%E3%82%A1%E3%83%97%E8%A8%98%E9%8C%B2-ai%E3%81%8C%E6%81%8B%E6%84%9B%E3%82%92%E3%82%B5%E3%83%9D%E3%83%BC%E3%83%88/id6754208024)
+- **Google Play**: [https://play.google.com/store/apps/details?id=com.tatsukikane.baelab&pcampaignid=web_share](https://play.google.com/store/apps/details?id=com.tatsukikane.baelab&pcampaignid=web_share)
+
+## 🛠️ 技術スタック
+
+- **フレームワーク**: [Next.js](https://nextjs.org) 16.0.6
+- **UIライブラリ**: [React](https://react.dev) 19.2.0
+- **スタイリング**: [Tailwind CSS](https://tailwindcss.com) 4
+- **フォント**: [Geist](https://vercel.com/font)
+- **言語**: TypeScript 5
+
+## 📁 プロジェクト構造
+
+```
+app_portfolio/
+├── app/
+│   ├── globals.css      # グローバルスタイル
+│   ├── layout.tsx       # ルートレイアウト
+│   └── page.tsx         # ホームページ
+├── components/
+│   ├── AppCard.tsx      # アプリカードコンポーネント
+│   ├── AppHero.tsx      # アプリヒーローセクション
+│   └── TableOfContents.tsx # 目次コンポーネント
+├── data/
+│   └── apps.ts          # アプリデータ
+└── types/
+    └── app.ts           # 型定義
+```
+
+## 🎨 特徴
+
+- グラデーション背景とカラフルなUIデザイン
+- スムーズなスクロールとカスタムアニメーション
+- レスポンシブデザイン
+- 各アプリの詳細情報とダウンロードリンク
+
+## 📄 ライセンス
+
+このプロジェクトはプライベートプロジェクトです。
