@@ -57,7 +57,7 @@ export default function AppCard({ app }: AppCardProps) {
       </ul>
 
       {/* タグ */}
-      <div className="relative mb-6 flex flex-wrap gap-2">
+      <div className="relative mb-4 flex flex-wrap gap-2">
         {app.tags.slice(0, 3).map((tag) => (
           <span
             key={tag}
@@ -69,14 +69,41 @@ export default function AppCard({ app }: AppCardProps) {
         ))}
       </div>
 
-      {/* リンクボタン */}
-      <div className="relative flex gap-3">
+      {/* Websiteリンク */}
+      {app.websiteUrl && (
+        <div className="relative mb-4">
+          <Link
+            href={app.websiteUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 rounded-lg border-2 px-4 py-2 text-sm font-medium transition-all duration-300 hover:scale-105 hover:shadow-md"
+            style={{ 
+              borderColor: app.color,
+              color: app.color
+            }}
+          >
+            <svg
+              className="h-4 w-4"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+            </svg>
+            Website
+          </Link>
+        </div>
+      )}
+
+      {/* ダウンロードボタン */}
+      <div className="relative flex flex-wrap gap-3">
         {app.appStoreUrl && (
           <Link
             href={app.appStoreUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex-1 rounded-xl px-4 py-3 text-center text-sm font-semibold text-white transition-all duration-300 hover:scale-105"
+            className="flex-1 min-w-[120px] rounded-xl px-4 py-3 text-center text-sm font-semibold text-white transition-all duration-300 hover:scale-105"
             style={{ backgroundColor: app.color }}
           >
             App Store
@@ -87,7 +114,7 @@ export default function AppCard({ app }: AppCardProps) {
             href={app.googlePlayUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex-1 rounded-xl px-4 py-3 text-center text-sm font-semibold text-white transition-all duration-300 hover:scale-105"
+            className="flex-1 min-w-[120px] rounded-xl px-4 py-3 text-center text-sm font-semibold text-white transition-all duration-300 hover:scale-105"
             style={{ backgroundColor: app.color }}
           >
             Google Play

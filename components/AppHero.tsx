@@ -87,6 +87,33 @@ export default function AppHero({ app, reverse = false }: AppHeroProps) {
             )}
           </div>
 
+          {/* Websiteリンク */}
+          {app.websiteUrl && (
+            <div className="pt-2 lg:pt-4">
+              <Link
+                href={app.websiteUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 rounded-xl border-2 px-5 py-2.5 text-sm font-semibold transition-all duration-300 hover:scale-105 hover:shadow-md lg:rounded-2xl lg:px-6 lg:py-3 lg:text-base"
+                style={{ 
+                  borderColor: app.color,
+                  color: app.color
+                }}
+              >
+                <svg
+                  className="h-4 w-4 lg:h-5 lg:w-5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                </svg>
+                Website
+              </Link>
+            </div>
+          )}
+
           {/* CTAボタン */}
           <div className="flex flex-col gap-3 pt-2 sm:flex-row lg:gap-4 lg:pt-4">
             {app.appStoreUrl && (

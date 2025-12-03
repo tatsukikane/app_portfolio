@@ -26,6 +26,7 @@ export const apps: App[] = [
     tags: ['マップ', '旅行', 'デート', '共有', 'メモ'],
     appStoreUrl: 'https://apps.apple.com/jp/app/iko-%E8%A1%8C%E3%81%8D%E3%81%9F%E3%81%84%E5%A0%B4%E6%89%80%E3%82%92%E3%83%9E%E3%83%83%E3%83%97%E3%81%AB%E3%83%A1%E3%83%A2/id6475811225',
     googlePlayUrl: 'https://play.google.com/store/apps/details?id=com.tatsukikane.iko&pcampaignid=web_share',
+    websiteUrl: 'https://iko-home-page.vercel.app/',
   },
   {
     id: 'dreambox',
@@ -51,6 +52,7 @@ export const apps: App[] = [
     tags: ['バケットリスト', '夢', '人生', 'カウントダウン', '目標'],
     appStoreUrl: 'https://apps.apple.com/jp/app/dreambox-%E3%83%90%E3%82%B1%E3%83%83%E3%83%88%E3%83%AA%E3%82%B9%E3%83%88/id6456941403',
     googlePlayUrl: 'https://play.google.com/store/apps/details?id=com.kt.dreamBox&pcampaignid=web_share',
+    websiteUrl: 'https://note.com/tatsukikane/n/nca01468536d0',
   },
   {
     id: 'profile-checker',
@@ -123,6 +125,7 @@ export const apps: App[] = [
     tags: ['恋愛', 'AI', 'マッチング', '分析', '記録'],
     appStoreUrl: 'https://apps.apple.com/jp/app/baelab-%E3%83%9E%E3%83%81%E3%82%A1%E3%83%97%E8%A8%98%E9%8C%B2-ai%E3%81%8C%E6%81%8B%E6%84%9B%E3%82%92%E3%82%B5%E3%83%9D%E3%83%BC%E3%83%88/id6754208024',
     googlePlayUrl: 'https://play.google.com/store/apps/details?id=com.tatsukikane.baelab&pcampaignid=web_share',
+    websiteUrl: 'https://note.com/tatsukikane/n/nadb07e431c0a',
   },
 ];
 
