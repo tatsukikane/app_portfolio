@@ -3,6 +3,7 @@
 import { App } from '@/types/app';
 import Link from 'next/link';
 import { useState } from 'react';
+import { track } from '@vercel/analytics';
 
 interface AppHeroProps {
   app: App;
@@ -94,6 +95,7 @@ export default function AppHero({ app, reverse = false }: AppHeroProps) {
                 href={app.websiteUrl}
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => track('app_website_click', { app_id: app.id, app_name: app.name })}
                 className="inline-flex items-center gap-2 rounded-xl border-2 px-5 py-2.5 text-sm font-semibold transition-all duration-300 hover:scale-105 hover:shadow-md lg:rounded-2xl lg:px-6 lg:py-3 lg:text-base"
                 style={{ 
                   borderColor: app.color,
@@ -121,6 +123,7 @@ export default function AppHero({ app, reverse = false }: AppHeroProps) {
                 href={app.appStoreUrl}
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => track('app_store_click', { app_id: app.id, app_name: app.name, store: 'app_store' })}
                 className="group flex min-h-[44px] items-center justify-center gap-2 rounded-xl px-6 py-3 text-sm font-bold text-white shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-2xl lg:rounded-2xl lg:px-8 lg:py-4 lg:text-lg"
                 style={{ backgroundColor: app.color }}
               >
@@ -141,6 +144,7 @@ export default function AppHero({ app, reverse = false }: AppHeroProps) {
                 href={app.googlePlayUrl}
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => track('app_store_click', { app_id: app.id, app_name: app.name, store: 'google_play' })}
                 className="group flex min-h-[44px] items-center justify-center gap-2 rounded-xl px-6 py-3 text-sm font-bold text-white shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-2xl lg:rounded-2xl lg:px-8 lg:py-4 lg:text-lg"
                 style={{ backgroundColor: app.color }}
               >

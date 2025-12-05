@@ -1,5 +1,8 @@
+'use client';
+
 import { App } from '@/types/app';
 import Link from 'next/link';
+import { track } from '@vercel/analytics';
 
 interface AppCardProps {
   app: App;
@@ -76,6 +79,7 @@ export default function AppCard({ app }: AppCardProps) {
             href={app.websiteUrl}
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => track('app_website_click', { app_id: app.id, app_name: app.name })}
             className="inline-flex items-center gap-2 rounded-lg border-2 px-4 py-2 text-sm font-medium transition-all duration-300 hover:scale-105 hover:shadow-md"
             style={{ 
               borderColor: app.color,
@@ -103,6 +107,7 @@ export default function AppCard({ app }: AppCardProps) {
             href={app.appStoreUrl}
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => track('app_store_click', { app_id: app.id, app_name: app.name, store: 'app_store' })}
             className="flex-1 min-w-[120px] rounded-xl px-4 py-3 text-center text-sm font-semibold text-white transition-all duration-300 hover:scale-105"
             style={{ backgroundColor: app.color }}
           >
@@ -114,6 +119,7 @@ export default function AppCard({ app }: AppCardProps) {
             href={app.googlePlayUrl}
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => track('app_store_click', { app_id: app.id, app_name: app.name, store: 'google_play' })}
             className="flex-1 min-w-[120px] rounded-xl px-4 py-3 text-center text-sm font-semibold text-white transition-all duration-300 hover:scale-105"
             style={{ backgroundColor: app.color }}
           >
