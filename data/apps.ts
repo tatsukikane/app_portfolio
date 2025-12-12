@@ -5,11 +5,12 @@ export const apps: App[] = [
     id: 'iko',
     name: 'iko',
     nameEn: 'iko',
-    description: '行きたい場所をマップにメモするアプリ',
-    catchphrase: '行きたい場所、地図に残してる？',
+    description: '行きたい場所をマップにメモするアプリ（1人/カップル向け）',
+    catchphrase: '行きたい場所、地図に残してる？（1人・2人用）',
     problem: '「この前TVで見たあのお店の名前なんだっけ。。」「インスタで見つけた美味しそうなお店、ブックマークしたけど、見つからない。」そんな経験ありませんか？',
-    userBenefit: 'SNSやTVで見つけた「ここ行きたい！」を、地図にサクッと保存。パートナーと共有しながら、二人だけのオリジナルのマップを作り上げることができます。',
-    longDescription: 'SNSやTVで見つけた「ここ行きたい！」を、地図にサクッと保存できるアプリ。パートナーと共有しながら、二人だけのオリジナルのマップを作り上げることができます。',
+    userBenefit: 'SNSやTVで見つけた「ここ行きたい！」を地図にサクッと保存。1人でも、パートナーと2人でも、行きたい場所を整理しておけます。',
+    longDescription:
+      'SNSやTVで見つけた「ここ行きたい！」を地図にサクッと保存できるアプリ。1人利用やカップル利用を想定し、2人だけのオリジナルマップを簡単に作り上げられます。',
     features: [
       '検索するだけでMAP上にメモ',
       '登録したスポットはMAP上で確認可能',
@@ -27,6 +28,38 @@ export const apps: App[] = [
     appStoreUrl: 'https://apps.apple.com/jp/app/iko-%E8%A1%8C%E3%81%8D%E3%81%9F%E3%81%84%E5%A0%B4%E6%89%80%E3%82%92%E3%83%9E%E3%83%83%E3%83%97%E3%81%AB%E3%83%A1%E3%83%A2/id6475811225',
     googlePlayUrl: 'https://play.google.com/store/apps/details?id=com.tatsukikane.iko&pcampaignid=web_share',
     websiteUrl: 'https://iko-home-page.vercel.app/',
+  },
+  {
+    id: 'iko-friends',
+    name: 'iko for Friends',
+    nameEn: 'iko for Friends',
+    description: '仲間と行きたい場所を共有する複数人グループ向けマップアプリ',
+    catchphrase: 'みんなの「行きたい！」を一枚の地図に（グループ用）',
+    problem:
+      '「誰が言ってたっけ？」「場所どこだっけ？」グループチャットで流れがちな行きたい場所が散逸してしまう。',
+    userBenefit:
+      '友達全員で一つのマップを共有し、見つけたスポットをその場で追加。飲み会や旅行の候補が集約され、計画がスムーズに進む。',
+    longDescription:
+      'ikoをグループ利用に特化させた共有マップアプリ。SNSやTVで見つけた「ここ行きたい！」を仲間と一緒に地図へ保存。全員が自由にピン追加・編集でき、一覧とマップで素早く振り返り。ワンタップでナビや電話、Webも開けるので、グループの予定づくりがシンプルになります。',
+    features: [
+      '複数人で使える共有マップを即作成',
+      'メンバー全員がピンを追加・編集可能',
+      '検索して1タップで地図に保存',
+      '一覧＆マップ表示で候補を整理',
+      '電話・ナビ・Webサイトにワンタップアクセス',
+      '写真やタグ追加（プレミアム）',
+      'リンク招待で簡単参加、無料で5人まで',
+    ],
+    category: 'ライフスタイル',
+    color: '#FF9CE2',
+    gradient: 'from-pink-200 via-rose-300 to-fuchsia-300',
+    icon: '🧭',
+    tags: ['マップ', '共有', 'グループ', '旅行', '飲み会'],
+    appStoreUrl:
+      'https://apps.apple.com/jp/app/iko-for-friends-%E4%BB%B2%E9%96%93%E3%81%A8%E8%A1%8C%E3%81%8D%E3%81%9F%E3%81%84%E5%A0%B4%E6%89%80%E3%82%92%E3%83%A1%E3%83%A2/id6756227675',
+    googlePlayUrl:
+      'https://play.google.com/store/apps/details?id=com.tatsukikane.ikoforfriends&pcampaignid=web_share',
+    websiteUrl: 'https://note.com/tatsukikane/n/nc53c2c3b568e',
   },
   {
     id: 'dreambox',
