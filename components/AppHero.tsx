@@ -26,10 +26,18 @@ export default function AppHero({ app, reverse = false }: AppHeroProps) {
           {/* カテゴリーとアイコン */}
           <div className="flex items-center gap-3 lg:gap-4">
             <div
-              className="flex h-12 w-12 items-center justify-center rounded-2xl text-2xl shadow-lg transition-transform duration-300 hover:scale-110 lg:h-20 lg:w-20 lg:rounded-3xl lg:text-5xl"
+              className="flex h-12 w-12 items-center justify-center rounded-2xl text-2xl shadow-lg transition-transform duration-300 hover:scale-110 lg:h-20 lg:w-20 lg:rounded-3xl lg:text-5xl overflow-hidden"
               style={{ backgroundColor: `${app.color}20` }}
             >
-              {app.icon}
+              {app.icon.startsWith('/') ? (
+                <img
+                  src={app.icon}
+                  alt={app.name}
+                  className="w-full h-full object-contain"
+                />
+              ) : (
+                app.icon
+              )}
             </div>
             <div>
               <div className="mb-1 text-xs font-semibold uppercase tracking-wider text-gray-600 lg:mb-2 lg:text-sm">
@@ -176,10 +184,18 @@ export default function AppHero({ app, reverse = false }: AppHeroProps) {
             />
             <div className="relative flex h-64 items-center justify-center xl:h-96">
               <div
-                className="flex h-48 w-48 items-center justify-center rounded-3xl text-7xl shadow-2xl transition-transform duration-500 hover:scale-110 xl:h-64 xl:w-64 xl:text-9xl"
+                className="flex h-48 w-48 items-center justify-center rounded-3xl text-7xl shadow-2xl transition-transform duration-500 hover:scale-110 xl:h-64 xl:w-64 xl:text-9xl overflow-hidden"
                 style={{ backgroundColor: `${app.color}30` }}
               >
-                {app.icon}
+                {app.icon.startsWith('/') ? (
+                  <img
+                    src={app.icon}
+                    alt={app.name}
+                    className="w-full h-full object-contain"
+                  />
+                ) : (
+                  app.icon
+                )}
               </div>
             </div>
           </div>
