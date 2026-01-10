@@ -25,10 +25,18 @@ export default function AppCard({ app }: AppCardProps) {
       <div className="relative mb-6 flex items-start justify-between">
         <div className="flex items-center gap-4">
           <div
-            className="flex h-16 w-16 items-center justify-center rounded-2xl text-4xl shadow-lg transition-transform duration-300 group-hover:scale-110"
+            className="flex h-16 w-16 items-center justify-center rounded-2xl text-4xl shadow-lg transition-transform duration-300 group-hover:scale-110 overflow-hidden"
             style={{ backgroundColor: `${app.color}20` }}
           >
-            {app.icon}
+            {app.icon.startsWith('/') ? (
+              <img
+                src={app.icon}
+                alt={app.name}
+                className="w-full h-full object-contain"
+              />
+            ) : (
+              <span>{app.icon}</span>
+            )}
           </div>
           <div>
             <div className="mb-1 text-xs font-semibold uppercase tracking-wider text-gray-500 dark:text-gray-400">

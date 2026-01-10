@@ -87,7 +87,15 @@ export default function TableOfContents({ apps }: TableOfContentsProps) {
                       borderLeft: `4px solid ${app.color}`,
                     }}
                   >
-                    <span className="text-3xl">{app.icon}</span>
+                    {app.icon.startsWith('/') ? (
+                      <img
+                        src={app.icon}
+                        alt={app.name}
+                        className="h-8 w-8 object-contain"
+                      />
+                    ) : (
+                      <span className="text-3xl">{app.icon}</span>
+                    )}
                     <div className="flex-1">
                       <div className="text-sm font-semibold text-gray-900">
                         {app.name}
@@ -133,7 +141,15 @@ export default function TableOfContents({ apps }: TableOfContentsProps) {
                   color: app.color,
                 }}
               >
-                <span className="text-lg">{app.icon}</span>
+                {app.icon.startsWith('/') ? (
+                  <img
+                    src={app.icon}
+                    alt={app.name}
+                    className="h-5 w-5 object-contain"
+                  />
+                ) : (
+                  <span className="text-lg">{app.icon}</span>
+                )}
                 <span>{app.name}</span>
               </Link>
             ))}
