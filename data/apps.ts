@@ -52,7 +52,7 @@ export const apps: App[] = [
     category: 'ライフスタイル',
     color: '#FF9CE2',
     gradient: 'from-pink-200 via-rose-300 to-fuchsia-300',
-    icon: '🧭',
+    icon: '/iko_for_friends_icon.png',
     tags: ['マップ', '共有', 'グループ', '旅行', '飲み会'],
     appStoreUrl:
       'https://apps.apple.com/jp/app/iko-for-friends-%E4%BB%B2%E9%96%93%E3%81%A8%E8%A1%8C%E3%81%8D%E3%81%9F%E3%81%84%E5%A0%B4%E6%89%80%E3%82%92%E3%83%A1%E3%83%A2/id6756227675',
