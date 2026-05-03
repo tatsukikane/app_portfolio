@@ -65,7 +65,7 @@ export default function AppHero({ app, reverse = false }: AppHeroProps) {
           </div>
 
           {/* ベネフィット */}
-          <p className="text-sm leading-relaxed text-gray-700 lg:text-lg">
+          <p className="whitespace-pre-line text-sm leading-relaxed text-gray-700 lg:text-lg">
             {app.userBenefit}
           </p>
 
