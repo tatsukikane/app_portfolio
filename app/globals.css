@@ -12,7 +12,6 @@
   --font-mono: var(--font-geist-mono);
 }
 
-/* ダークモードを無効化して常に明るいデザインに */
 * {
   box-sizing: border-box;
 }
@@ -26,7 +25,6 @@ body {
   padding: 0;
 }
 
-/* スムーズなスクロール */
 html {
   scroll-behavior: smooth;
   background: linear-gradient(135deg, #fef3ff 0%, #fff3f5 25%, #fff8e1 50%, #e0f7fa 75%, #f3e5f5 100%);
@@ -34,16 +32,44 @@ html {
   min-height: 100vh;
 }
 
-/* カスタムアニメーション */
+/* フローティングアニメーション */
 @keyframes float {
   0%, 100% {
     transform: translateY(0px);
   }
   50% {
-    transform: translateY(-20px);
+    transform: translateY(-12px);
   }
 }
 
 .animate-float {
   animation: float 3s ease-in-out infinite;
+}
+
+/* スクロールアニメーション（モダンブラウザ向け） */
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@supports (animation-timeline: scroll()) {
+  .scroll-reveal {
+    animation: fade-in-up 0.6s ease-out both;
+    animation-timeline: view();
+    animation-range: entry 0% entry 20%;
+  }
+}
+
+/* <details> のデフォルト矢印を非表示 */
+summary {
+  list-style: none;
+}
+summary::-webkit-details-marker {
+  display: none;
 }

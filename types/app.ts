@@ -1,13 +1,19 @@
+export interface FAQ {
+  question: string;
+  answer: string;
+}
+
 export interface App {
   id: string;
   name: string;
   nameEn: string;
   description: string;
   longDescription: string;
-  catchphrase: string; // キャッチコピー
-  userBenefit: string; // ユーザーベネフィット
-  problem: string; // 解決する課題
+  catchphrase: string;
+  userBenefit: string;
+  problem: string;
   features: string[];
+  faqs?: FAQ[];
   category: string;
   color: string;
   gradient: string;
@@ -18,4 +24,3 @@ export interface App {
   websiteUrl?: string;
   tags: string[];
 }
-

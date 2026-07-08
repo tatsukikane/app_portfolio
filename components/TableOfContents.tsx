@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import { App } from '@/types/app';
 import Link from 'next/link';
 import { useState } from 'react';
@@ -11,163 +12,134 @@ interface TableOfContentsProps {
 export default function TableOfContents({ apps }: TableOfContentsProps) {
   const [isOpen, setIsOpen] = useState(false);
 
-  const handleLinkClick = () => {
-    setIsOpen(false);
-  };
-
   return (
     <>
-      {/* モバイル: ハンバーガーメニュー */}
-      <nav className="sticky top-0 z-50 border-b border-purple-200/50 bg-white/90 backdrop-blur-md shadow-sm lg:hidden">
-        <div className="mx-auto max-w-7xl px-4 py-3">
-          <div className="flex items-center justify-between">
-            <span className="text-sm font-semibold text-gray-600">目次</span>
-            <button
-              onClick={() => setIsOpen(!isOpen)}
-              className="flex h-10 w-10 items-center justify-center rounded-lg text-gray-700 transition-colors hover:bg-gray-100"
-              aria-label="メニューを開く"
-            >
-              <svg
-                className="h-6 w-6"
-                fill="none"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                {isOpen ? (
-                  <path d="M6 18L18 6M6 6l12 12" />
-                ) : (
-                  <path d="M4 6h16M4 12h16M4 18h16" />
-                )}
-              </svg>
-            </button>
-          </div>
+      {/* モバイル: スティッキーヘッダー */}
+      <header className="sticky top-0 z-50 border-b border-gray-100 bg-white/90 shadow-sm backdrop-blur-md lg:hidden">
+        <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3">
+          <Link href="/" className="text-sm font-bold text-gray-900">
+            ✦ Apps
+          </Link>
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className="flex h-9 w-9 items-center justify-center rounded-lg text-gray-600 transition-colors hover:bg-gray-100"
+            aria-label={isOpen ? 'メニューを閉じる' : 'メニューを開く'}
+            aria-expanded={isOpen}
+          >
+            <svg className="h-5 w-5" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor">
+              {isOpen ? (
+                <path d="M6 18L18 6M6 6l12 12" />
+              ) : (
+                <path d="M4 6h16M4 12h16M4 18h16" />
+              )}
+            </svg>
+          </button>
         </div>
-      </nav>
+      </header>
 
       {/* モバイル: ドロワーメニュー */}
       {isOpen && (
         <>
           <div
-            className="fixed inset-0 z-40 bg-black/50 backdrop-blur-sm lg:hidden"
+            className="fixed inset-0 z-40 bg-black/40 backdrop-blur-sm lg:hidden"
             onClick={() => setIsOpen(false)}
           />
-          <div className="fixed right-0 top-0 z-50 h-full w-80 overflow-y-auto bg-white shadow-2xl lg:hidden">
-            <div className="p-6">
-              <div className="mb-6 flex items-center justify-between">
-                <h2 className="text-xl font-bold text-gray-900">目次</h2>
-                <button
+          <nav className="fixed right-0 top-0 z-50 flex h-full w-72 flex-col overflow-y-auto bg-white shadow-2xl lg:hidden">
+            <div className="flex items-center justify-between border-b border-gray-100 px-5 py-4">
+              <span className="text-base font-bold text-gray-900">✦ Apps</span>
+              <button
+                onClick={() => setIsOpen(false)}
+                className="flex h-9 w-9 items-center justify-center rounded-lg text-gray-600 hover:bg-gray-100"
+                aria-label="メニューを閉じる"
+              >
+                <svg className="h-5 w-5" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor">
+                  <path d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+            </div>
+            <div className="flex-1 px-3 py-4">
+              {apps.map((app) => (
+                <Link
+                  key={app.id}
+                  href={`#${app.id}`}
                   onClick={() => setIsOpen(false)}
-                  className="flex h-10 w-10 items-center justify-center rounded-lg text-gray-700 transition-colors hover:bg-gray-100"
-                  aria-label="メニューを閉じる"
+                  className="flex items-center gap-3 rounded-xl px-3 py-3 transition-colors hover:bg-gray-50"
                 >
-                  <svg
-                    className="h-6 w-6"
-                    fill="none"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path d="M6 18L18 6M6 6l12 12" />
-                  </svg>
-                </button>
-              </div>
-              <nav className="space-y-2">
-                {apps.map((app) => (
-                  <Link
-                    key={app.id}
-                    href={`#${app.id}`}
-                    onClick={handleLinkClick}
-                    className="group flex items-center gap-4 rounded-xl p-4 transition-all duration-200 hover:bg-gray-50 active:bg-gray-100"
-                    style={{
-                      borderLeft: `4px solid ${app.color}`,
-                    }}
+                  <div
+                    className="flex h-9 w-9 flex-shrink-0 items-center justify-center overflow-hidden rounded-xl"
+                    style={{ backgroundColor: `${app.color}18` }}
                   >
                     {app.icon.startsWith('/') ? (
-                      <img
-                        src={app.icon}
-                        alt={app.name}
-                        className="h-8 w-8 object-contain"
-                      />
+                      <Image src={app.icon} alt={app.name} width={36} height={36} className="object-contain" />
                     ) : (
-                      <span className="text-3xl">{app.icon}</span>
+                      <span className="text-xl">{app.icon}</span>
                     )}
-                    <div className="flex-1">
-                      <div className="text-sm font-semibold text-gray-900">
-                        {app.name}
-                      </div>
-                      <div className="text-xs text-gray-500">{app.category}</div>
-                    </div>
-                  </Link>
-                ))}
-                <Link
-                  href="#contact"
-                  onClick={handleLinkClick}
-                  className="group flex items-center gap-4 rounded-xl p-4 transition-all duration-200 hover:bg-gray-50 active:bg-gray-100"
-                  style={{
-                    borderLeft: '4px solid #7c3aed',
-                  }}
-                >
-                  <span className="text-3xl">📧</span>
-                  <div className="flex-1">
-                    <div className="text-sm font-semibold text-gray-900">
-                      お問い合わせ
-                    </div>
-                    <div className="text-xs text-gray-500">Contact</div>
+                  </div>
+                  <div>
+                    <p className="text-sm font-semibold text-gray-900">{app.name}</p>
+                    <p className="text-xs text-gray-400">{app.category}</p>
                   </div>
                 </Link>
-              </nav>
+              ))}
+              <div className="mx-3 my-2 border-t border-gray-100" />
+              <Link
+                href="#contact"
+                onClick={() => setIsOpen(false)}
+                className="flex items-center gap-3 rounded-xl px-3 py-3 transition-colors hover:bg-gray-50"
+              >
+                <div className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-xl bg-purple-50">
+                  <span className="text-xl">📧</span>
+                </div>
+                <div>
+                  <p className="text-sm font-semibold text-gray-900">お問い合わせ</p>
+                  <p className="text-xs text-gray-400">Contact</p>
+                </div>
+              </Link>
             </div>
-          </div>
+          </nav>
         </>
       )}
 
-      {/* デスクトップ: 従来の横並び表示 */}
-      <nav className="hidden border-b border-purple-200/50 bg-white/90 backdrop-blur-md shadow-sm lg:sticky lg:top-0 lg:z-50 lg:block">
-        <div className="mx-auto max-w-7xl px-6 py-4">
-          <div className="flex flex-wrap items-center justify-center gap-4">
-            <span className="text-sm font-semibold text-gray-600">目次:</span>
+      {/* デスクトップ: ヘッダーナビゲーション */}
+      <header className="sticky top-0 z-50 hidden border-b border-gray-100 bg-white/90 shadow-sm backdrop-blur-md lg:block">
+        <div className="mx-auto flex max-w-7xl items-center gap-6 px-6 py-3">
+          {/* ロゴ */}
+          <Link href="/" className="flex-shrink-0 text-sm font-bold text-gray-900">
+            ✦ Apps
+          </Link>
+
+          {/* アプリリンク */}
+          <nav className="flex flex-1 flex-wrap items-center gap-1">
             {apps.map((app) => (
               <Link
                 key={app.id}
                 href={`#${app.id}`}
-                className="group flex items-center gap-2 rounded-full px-4 py-2 text-sm font-medium transition-all duration-300 hover:scale-105"
+                className="flex items-center gap-1.5 rounded-full px-3 py-1.5 text-xs font-medium transition-all duration-200 hover:scale-105"
                 style={{
-                  backgroundColor: `${app.color}15`,
+                  backgroundColor: `${app.color}12`,
                   color: app.color,
                 }}
               >
                 {app.icon.startsWith('/') ? (
-                  <img
-                    src={app.icon}
-                    alt={app.name}
-                    className="h-5 w-5 object-contain"
-                  />
+                  <Image src={app.icon} alt={app.name} width={16} height={16} className="object-contain" />
                 ) : (
-                  <span className="text-lg">{app.icon}</span>
+                  <span className="text-sm">{app.icon}</span>
                 )}
                 <span>{app.name}</span>
               </Link>
             ))}
-            <Link
-              href="#contact"
-              className="group flex items-center gap-2 rounded-full px-4 py-2 text-sm font-medium transition-all duration-300 hover:scale-105"
-              style={{
-                backgroundColor: '#7c3aed15',
-                color: '#7c3aed',
-              }}
-            >
-              <span className="text-lg">📧</span>
-              <span>お問い合わせ</span>
-            </Link>
-          </div>
+          </nav>
+
+          {/* お問い合わせ */}
+          <Link
+            href="#contact"
+            className="flex-shrink-0 rounded-full px-4 py-1.5 text-xs font-semibold text-white transition-all duration-200 hover:opacity-80"
+            style={{ backgroundColor: '#7c3aed' }}
+          >
+            お問い合わせ
+          </Link>
         </div>
-      </nav>
+      </header>
     </>
   );
 }
-
